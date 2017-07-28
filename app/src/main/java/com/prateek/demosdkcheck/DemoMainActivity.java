@@ -9,7 +9,7 @@ import com.videotap.android.player.smart.SmartPlayerView;
 import com.videotap.android.player.smart.VideoTapSmartPlayer;
 import com.videotap.android.player.util.Util;
 
-public class MainActivity extends AppCompatActivity implements VideoTapSmartPlayer.SmartPlayerHandler{
+public class DemoMainActivity extends AppCompatActivity implements VideoTapSmartPlayer.SmartPlayerHandler{
     private String userAgent;
     VideoTapSmartPlayer videoTapSmartPlayer;
     @Override
@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements VideoTapSmartPlay
         setContentView(R.layout.activity_main);
         makeImmersive();
         String uToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiJhYmM0OTQwNi1lZDFhLTRmYmUtYjA2NS1jY2RhMzk1ZDU5ZmEiLCJpYXQiOjE1MDA4OTA5NDE0NjMsImV4cCI6MTU2Mzk2Mjk0MTQ2M30.2wGl9yxaJZr4gFGaxN-H4lpbYI9xxWLtyoNHmSp-WSE";
+
 
         userAgent = Util.getUserAgent(this, getResources().getString(R.string.app_name));
         videoTapSmartPlayer = new VideoTapSmartPlayer((SmartPlayerView) findViewById(R.id.smartPlayerView),

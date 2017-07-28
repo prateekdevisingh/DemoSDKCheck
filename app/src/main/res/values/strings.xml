@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">DemoSDKCheck</string>
     <string name="start_player">Start</string>
+    <string name="cokery_show">Cookery Show</string>
+    <string name="mummy_ka_magic">Mummy ka Magic</string>
+    <string name="filipino_factor">Filipino Factor</string>
+    <string name="exploring_the_coral_reef">Exploring the coral reef</string>
+    <string name="movie_mashup">Movie Mashup</string>
+    <string name="zoobi_doobi">Zoobi Doobi</string>
+    <string name="education">Education</string>
+    <string name="zara">Zara</string>
+    <string name="bmw">BMW</string>
+    <string name="range_rover">Range Rover</string>
+    <string name="us_presidential">US Presidential</string>
 </resources>

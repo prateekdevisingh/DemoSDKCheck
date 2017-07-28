@@ -12,10 +12,20 @@ import com.videotap.android.player.util.Util;
 public class DemoMainActivity extends AppCompatActivity implements VideoTapSmartPlayer.SmartPlayerHandler{
     private String userAgent;
     VideoTapSmartPlayer videoTapSmartPlayer;
+
+    String videoId = "";
+    String videoJsonId = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        try {
+            videoId = getIntent().getStringExtra("VIDEOID");
+            videoJsonId = getIntent().getStringExtra("VIDEOJSONID");
+        }catch (Exception e){
+
+        }
         makeImmersive();
         String uToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiJhYmM0OTQwNi1lZDFhLTRmYmUtYjA2NS1jY2RhMzk1ZDU5ZmEiLCJpYXQiOjE1MDA4OTA5NDE0NjMsImV4cCI6MTU2Mzk2Mjk0MTQ2M30.2wGl9yxaJZr4gFGaxN-H4lpbYI9xxWLtyoNHmSp-WSE";
 
@@ -26,8 +36,8 @@ public class DemoMainActivity extends AppCompatActivity implements VideoTapSmart
                 userAgent,
                 this,
                 this,
-                "466f2b20-7473-43c8-8bfb-aed212ca329f"/*videoid*/,
-                "58876fc8e501077c7b86ff87"/*videojsonid*/);
+                /*"466f2b20-7473-43c8-8bfb-aed212ca329f"*/videoId,
+                /*"58876fc8e501077c7b86ff87"*/videoJsonId);
 
         videoTapSmartPlayer.prepareAndStartPlayer();
     }
@@ -110,4 +120,35 @@ public class DemoMainActivity extends AppCompatActivity implements VideoTapSmart
     public void tabletLandscapeMaximize() {
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        videoTapSmartPlayer.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        videoTapSmartPlayer.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        videoTapSmartPlayer.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        videoTapSmartPlayer.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        videoTapSmartPlayer.onBackPressed();
+    }
+
 }
